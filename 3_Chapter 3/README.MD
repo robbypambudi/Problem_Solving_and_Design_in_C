@@ -190,6 +190,7 @@ Data Usage (n), Gbs     Charges
  Given the amount of data used by the subscriber (i.e. n), write a program to 
 calculate the cha
 
+### Code 
 ```
 #include <stdio.h>
 
@@ -216,4 +217,157 @@ int main (){
         printf("2000\n");
     }
 }
+```
+
+### Soal No 6
+Write a program that takes the x–y coordinates of a point in the Cartesian 
+plane and prints a message telling either an axis on which the point lies or the 
+quadrant in which it is found.
+### Code
+
+```
+#include <stdio.h>
+
+int main (){
+    float X, Y;
+    scanf("%f %f", &X, &Y);
+
+    printf("(%.1f , %.1f) ", X , Y);
+
+    if (X == 0 && Y == 0){
+        printf(" 0 \n");
+    }
+    else if (X == 0){
+        printf("is on the x-axis\n");
+    }
+    else if (Y == 0){
+        printf("is on the y-axis\n");
+    }
+    else if (X > 0 && Y > 0){
+        printf("is in quadrant I\n");
+    }
+    else if (X < 0 && Y > 0){
+        printf("is in quadrant II\n");
+    }
+    else if (X < 0 && Y < 0){
+        printf("is in quadrant III\n");
+    }
+    else if (X > 0 && Y < 0){
+        printf("is in quadrant IV\n");
+    }
+    else {
+        printf("I dont know\n");
+    }
+
+    return 0;
+}
+```
+
+### Soal No 7
+Write a program that determines the day number (1 to 366) in a year for a 
+date that is provided as input data. As an example, January 1, 1994, is day 1. 
+December 31, 1993, is day 365. December 31, 1996, is day 366, since 1996 is 
+a leap year. A year is a leap year if it is divisible by four, except that any year 
+divisible by 100 is a leap year only if it is divisible by 400. Your program should 
+accept the month, day, and year as integers. Include a function leap that 
+returns 1 if called with a leap year, 0 otherwise.
+### Code
+```
+#include <stdio.h>
+
+int main (){
+    int day, month, year;
+
+    printf("Input Day/Month/Year as Integer (12 04 2003): ");
+    scanf("%d %d %d", &day, &month, &year);
+
+
+    // Detection leap year
+    int leap_year;
+    if (year%4== 0 && ((year%100!=0) || (year %400==0))){
+        leap_year = 1;
+    }
+    else {
+        leap_year = 0;
+    }
+    int count_day;
+
+    // Calculate Day
+    switch (month) {
+        case 1 :  count_day = day; break;
+        case 2 :  count_day = 31  + day + leap_year; break;
+        case 3 :  count_day = 59  + day + leap_year; break;
+        case 4 :  count_day = 90  + day + leap_year; break;  
+        case 5 :  count_day = 120 + day + leap_year; break;  
+        case 6 :  count_day = 151 + day + leap_year; break; 
+        case 7 :  count_day = 181 + day + leap_year; break;  
+        case 8 :  count_day = 212 + day + leap_year; break;   
+        case 9 :  count_day = 243 + day + leap_year; break;  
+        case 10 : count_day = 273 + day + leap_year; break;  
+        case 11 : count_day = 304 + day + leap_year; break;  
+        case 12 : count_day = 334 + day + leap_year; break;
+        default: break;
+    }
+    // Print Output
+    printf("%d\n", count_day);
+
+}
+```
+### Soal No 8
+Write a program that interacts with the user like this:
+```
+(1) First Free Service
+(2) Second Free Service
+Enter the Free Service number>> 2
+Enter number of Miles>> 3557
+Vehicle must be serviced.
+```
+### Code 
+```
+#include <stdio.h>
+
+int main (){
+    
+    int free_service_number;
+    int number_of_service;
+
+    printf("(1) First Free Service\n");
+    printf("(2) Second Free Service\n");
+    printf("Enter the Free Service number>> ");
+    scanf("%d",&free_service_number);
+    printf("Enter number of Miles>> ");
+    scanf("%d", &number_of_service);
+    
+    if (free_service_number == 1){
+        if (number_of_service > 1500 && number_of_service <= 3000){
+            printf("Vehicle must be serviced.\n");
+        }
+        else{
+            printf("Vehicle not be serviced\n");
+        }
+    } else if (free_service_number == 2){
+        if (number_of_service > 3001 && number_of_service <= 4500){
+            printf("Vehicle must be serviced.\n");
+        }
+        else{
+            printf("Vehicle not be serviced\n");
+        }
+    }
+}
+```
+### Soal No 9
+Chatflow Wireless offers customers 600 weekday minutes for a flat rate of 
+39.99. Night (8 p.m. to 7 a.m.) and weekend minutes are free, but additional 
+weekday minutes cost 0.40 each. There are taxes of 5.25% on all charges. 
+Write a program that prompts the user to enter the number of weekday 
+minutes, night minutes, and weekend minutes used, and calculates the 
+monthly bill and average cost of a minute before taxes. The program should 
+display with labels all the input data, the pretax bill and average minute 
+cost, the taxes, and the total bill. Store all monetary values as whole cents 
+(rounding the taxes and average minute cost), and divide by 100 for display 
+of results
+### Code 
+
+```
+
 ```

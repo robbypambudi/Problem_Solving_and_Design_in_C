@@ -15,4 +15,5 @@ int main (){
     char T;                 // For Type 
     scanf("%c", &T);
     
+    
 }

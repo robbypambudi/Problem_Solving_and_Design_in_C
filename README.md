@@ -10,4 +10,8 @@ Berisi tentang materi percabangan
 
 Silahkan Akses di : https://github.com/robbypambudi/Problem_Solving_and_Design_in_C/tree/main/4_Chapter%204
 
+# Chapter 6
+Berisi tentan materi 
+- Pointer
+
 # Comming Soon
